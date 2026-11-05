@@ -1,0 +1,601 @@
+{
+ "profile": {
+  "name": "张指导",
+  "handle": "大模型笔记",
+  "bio": "用动效把多模态和生成模型讲明白。每一集都能在网页里直接播放、拖进度、按知识点跳转。",
+  "links": [
+   {
+    "name": "小红书",
+    "url": "https://www.xiaohongshu.com/user/profile/6448ef760000000012035343"
+   },
+   {
+    "name": "抖音",
+    "url": "https://www.douyin.com/user/MS4wLjABAAAAgw1syzYP78LpwSXBc0uJh84JMedDXa-ed-53SY_4VNBiK0lTimJR2qkebh0M-2km"
+   },
+   {
+    "name": "GitHub",
+    "url": "https://github.com/ManagerZhang10"
+   }
+  ]
+ },
+ "series": [
+  {
+   "id": "vlm",
+   "name": "多模态原理 · 理解篇",
+   "desc": "看图的大模型怎么把图读进去、怎么训出来。示例模型 Qwen3-VL-8B。",
+   "repo": "https://github.com/ManagerZhang10/multimodal-introduction"
+  },
+  {
+   "id": "gen",
+   "name": "生成原理",
+   "desc": "生图模型怎么从噪声画出图、怎么训、怎么编辑、怎么评测。示例模型 Qwen-Image。",
+   "repo": "https://github.com/ManagerZhang10/multimodal-introduction"
+  },
+  {
+   "id": "paper",
+   "name": "论文解读",
+   "desc": "一期讲透一篇论文：它卡在哪、怎么解、效果如何。"
+  }
+ ],
+ "episodes": [
+  {
+   "slug": "vlm-01",
+   "series": "vlm",
+   "date": "2026-10-04",
+   "title": "AI 怎么看懂图片和视频",
+   "no": 1,
+   "dur": 204,
+   "hook": "AI到底是怎么看懂一张图的？",
+   "chapters": [
+    "开场：图片怎么变成token",
+    "切块：一张图切成784个patch",
+    "投影：从像素到视觉token",
+    "编码：用ViT理解整只猫",
+    "对齐：用MLP接到4096维",
+    "拼接：token排在问题前面",
+    "视频：每秒抽两帧加时间戳",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "vlm-02",
+   "series": "vlm",
+   "date": "2026-10-07",
+   "title": "视觉编码：缩放、切块、位置编码、ViT",
+   "no": 2,
+   "dur": 258,
+   "hook": "多模态大模型原理第二课，视觉编码：一张图片，怎么变成大模型能读的向量？",
+   "chapters": [
+    "图片怎么变成向量？",
+    "从 ViT 到 Qwen3-VL 总览",
+    "缩放切块与位置编码",
+    "27层ViT与合并",
+    "视频两帧一组处理",
+    "三代对比与成本账",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "vlm-03",
+   "series": "vlm",
+   "date": "2026-10-07",
+   "title": "图怎么交给大模型",
+   "no": 3,
+   "dur": 251,
+   "hook": "一张图经过ViT转成向量后，LLM怎么读懂它？",
+   "chapters": [
+    "LLM如何读懂图片？",
+    "占位符和DeepStack",
+    "图和字谁先谁后",
+    "三个坐标管位置",
+    "秒数写成文字",
+    "注意力只看前面",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "vlm-04",
+   "series": "vlm",
+   "date": "2026-10-07",
+   "title": "87 亿个参数是怎么训出来的",
+   "no": 4,
+   "dur": 255,
+   "hook": "一个看图模型，87亿个参数，是怎么一步步训出来的？",
+   "chapters": [
+    "87亿参数怎么训出来？",
+    "训练七步和损失怎么算",
+    "先只训合并器再全参看图",
+    "先短后长适应256K",
+    "监督微调与蒸馏学推理",
+    "强化学习用SAPO练更稳",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-01",
+   "series": "gen",
+   "date": "2026-10-10",
+   "title": "从噪声画出图",
+   "no": 1,
+   "dur": 252,
+   "hook": "生成式模型画一张图，为什么要从一团噪声开始，改上50遍？",
+   "chapters": [
+    "为什么要从噪声开始改50遍",
+    "Qwen-Image 里的生成循环",
+    "一步画完只会得到平均",
+    "混噪声造题，猜速度",
+    "用速度走50小步",
+    "大图要把时间表往噪声推",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-02",
+   "series": "gen",
+   "date": "2026-10-11",
+   "title": "生图模型长什么样",
+   "no": 2,
+   "dur": 290,
+   "hook": "AI生图模型的结构是什么？就两个组件：压缩器和去噪网络。",
+   "chapters": [
+    "生图模型由哪两部分组成？",
+    "先压缩到 latent 再计算",
+    "VAE 下采样、KL 与通道数",
+    "切块、线性层与位置编码",
+    "时间 t 如何调制 DiT 每一层",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-03",
+   "series": "gen",
+   "date": "2026-10-13",
+   "title": "文本条件怎么输入模型",
+   "no": 3,
+   "dur": 278,
+   "hook": "文本条件是如何控制生图的？",
+   "chapters": [
+    "文本条件如何控制生图",
+    "文字怎么变成向量",
+    "MMDiT 拼序列让图文互看",
+    "文字坐标沿对角线排开",
+    "CFG 方向听文字步子不变",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-04",
+   "series": "gen",
+   "date": "2026-10-14",
+   "title": "生图模型是怎么训出来的",
+   "no": 4,
+   "dur": 221,
+   "hook": "生图模型是怎么一步步训出来的？",
+   "chapters": [
+    "生图模型是怎么一步步训出来的？",
+    "训练分三段：预训练、SFT、RL",
+    "预训练：四类数据，从小图到大图",
+    "SFT：精选好图拉高画质",
+    "RL：DPO 学取舍、GRPO 按打分精修",
+    "KL 防止奖励被钻空子",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-05",
+   "series": "gen",
+   "date": "2026-10-15",
+   "title": "Flow-GRPO：把强化学习用到生图上",
+   "no": 5,
+   "dur": 244,
+   "hook": "强化学习怎么用到生图模型上？",
+   "chapters": [
+    "强化学习怎么用到生图模型上？",
+    "生图RL四条路与Flow出图",
+    "GRPO打分与Flow的两处卡点",
+    "ODE改SDE让概率能算能探索",
+    "训练只走10步省采样",
+    "KL防止奖励被钻空子",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-06",
+   "series": "gen",
+   "date": "2026-10-16",
+   "title": "除了 GRPO，生图 RL 还有哪两条路",
+   "no": 6,
+   "dur": 228,
+   "hook": "强化学习怎么用到生图模型上？",
+   "chapters": [
+    "开场：RL怎么用到生图模型",
+    "ReFL梯度只穿后段一步",
+    "ReFL防钻空子与代价",
+    "DiffusionNFT加噪学好坏方向",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-07",
+   "series": "gen",
+   "date": "2026-10-20",
+   "title": "编辑模型怎么用上参考图",
+   "no": 7,
+   "dur": 229,
+   "hook": "编辑模型和文生图模型，架构到底差在哪？",
+   "chapters": [
+    "架构到底差在哪",
+    "把原图加噪当起点",
+    "原图与画布通道拼接",
+    "ControlNet复制编码器零卷积",
+    "参考图变token拼序列",
+    "注意力位置编码时间步",
+    "训练损失只算目标段",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-08",
+   "series": "gen",
+   "date": "2026-10-21",
+   "title": "编辑模型怎么保持一致性",
+   "no": 8,
+   "dur": 225,
+   "hook": "图像编辑模型，如何保持一致性？",
+   "chapters": [
+    "编辑模型如何保持一致？",
+    "推理贴回原图保持一致性",
+    "训练时把Mask当输入",
+    "合成只改一处的数据",
+    "用GRPO强化一致性",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-09",
+   "series": "gen",
+   "date": "2026-10-23",
+   "title": "理解和生成怎么合进一个模型",
+   "no": 9,
+   "dur": 369,
+   "hook": "一个模型既要看懂图，又要画图，该怎么设计？",
+   "chapters": [
+    "开场：怎么合进一个模型",
+    "核心思想与两篇代表作",
+    "Janus-Pro离散编号猜图",
+    "BAGEL连续去噪双专家",
+    "两模型对照与分数",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-10",
+   "series": "gen",
+   "date": "2026-10-24",
+   "title": "生图模型怎么评测",
+   "no": 10,
+   "dur": 253,
+   "hook": "同一句话画出的两只猫，你觉得哪一张更好看？今天我们来讲生图模型怎么评测。",
+   "chapters": [
+    "生图模型怎么评测？",
+    "四大评测方法",
+    "FID 不看提示词已不主流",
+    "GenEval 出题判卷可刷满",
+    "Arena 让人投票打榜",
+    "HPS 学人打分当奖励",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-11",
+   "series": "gen",
+   "date": "2026-10-25",
+   "title": "图像编辑模型怎么评测",
+   "no": 11,
+   "dur": 251,
+   "hook": "只让编辑模型给猫戴一顶小红帽，其他都别动。这两张结果，你觉得哪一张改得更好？",
+   "chapters": [
+    "开场：哪张改得更好？",
+    "三类编辑评测方法",
+    "相似度指标各有盲区",
+    "大模型裁判漏看一致性",
+    "人类投票与Arena排名",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-12",
+   "series": "gen",
+   "date": "2026-10-30",
+   "title": "蒸馏怎么把生图从 40 步压到 4 步",
+   "no": 12,
+   "dur": 269,
+   "hook": "生图模型平时走40步，砍到4步就糊了；蒸馏过的模型，怎么4步也清楚？",
+   "chapters": [
+    "为什么蒸馏后4步也清楚？",
+    "为什么要一小步一小步走",
+    "PD：照老师路线两步并一步",
+    "DMD：平均差值代替判别器",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "gen-13",
+   "series": "gen",
+   "date": "2026-10-31",
+   "title": "生图模型如何实现连续强度控制",
+   "no": 13,
+   "dur": 301,
+   "hook": "编辑一张图，强度能不能像拉滑杆一样，一点点调？",
+   "chapters": [
+    "强度能像滑杆一样调吗？",
+    "程度词指令不连续",
+    "CFG 的零端回不到原图",
+    "造中间档教连续强度",
+    "只教一头 LoRA 系数滑杆",
+    "不训练换回原图箭头",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "srpo",
+   "series": "paper",
+   "date": "2026-10-08",
+   "title": "SRPO：一张图、两句话训 FLUX",
+   "dur": 234,
+   "hook": "让AI画的图更像照片，腾讯混元的SRPO只用一张图、两句话，训练10分钟，FLUX的图就明显更真实。它是怎么做到的？",
+   "chapters": [
+    "一张图两句话怎么训FLUX",
+    "三种经典提分方法",
+    "只训后几步被偏见带偏",
+    "已知噪声一步还原",
+    "正负两句话抵消偏见",
+    "SRPO效果更像照片",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "soar",
+   "series": "paper",
+   "date": "2026-10-09",
+   "title": "SOAR：不用 reward 教模型纠偏",
+   "dur": 204,
+   "hook": "让生图模型学会自己纠偏：腾讯混元的SOAR不用打分模型，只用普通图文对，GenEval从0.70涨到0.78。它是怎么做到的？",
+   "chapters": [
+    "SOAR怎么不用奖励纠偏",
+    "训练学直线生成却错位",
+    "Flow-GRPO只给最后分",
+    "出错那步教模型纠偏",
+    "算力代价换免打分",
+    "GenEval涨分且美学反超",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "lot",
+   "series": "paper",
+   "date": "2026-10-11",
+   "title": "LoT：生图时哪里要细才多算",
+   "dur": 316,
+   "hook": "生图模型能不能只在要细的地方多算？斯坦福和谷歌的LoT Diffusion，token少到三分之一，出图快一倍。",
+   "chapters": [
+    "生图模型能不能只在要细的地方多算",
+    "为什么均匀格子浪费算力",
+    "布局直接决定token大小",
+    "改DiT入口中间出口",
+    "用x_t补回丢失的384维",
+    "图像快一倍视频快三倍半",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "flow-grpo",
+   "series": "paper",
+   "date": "2026-10-13",
+   "title": "Flow-GRPO：把 GRPO 搬到生图上",
+   "dur": 221,
+   "hook": "怎么用强化学习，教生图模型把数量、颜色、位置都画对？港中文和快手可灵的Flow-GRPO，GenEval从0.63涨到0.95。",
+   "chapters": [
+    "怎么用Flow-GRPO让生图画对数量颜色位置？",
+    "Flow出图原理与GRPO打分规则",
+    "ODE改SDE让概率能算",
+    "噪声系数a取0.7与训练走10步",
+    "KL防止奖励被钻空子",
+    "综合分数GenEval从0.63涨到0.95",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "udm-grpo",
+   "series": "paper",
+   "date": "2026-10-13",
+   "title": "UDM-GRPO：离散扩散怎么做强化学习",
+   "dur": 207,
+   "hook": "离散扩散的生图模型，怎么做强化学习？北邮和智源的UDM-GRPO，照搬会训崩，改两处就稳了，GenEval从0.69涨到0.96。",
+   "chapters": [
+    "离散扩散怎么做强化学习？",
+    "均匀离散扩散与GRPO",
+    "基线为什么训崩",
+    "动作换成终图",
+    "轨迹跑偏后重新加噪",
+    "少训三步与不开CFG",
+    "改完后的效果对比",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "x-rec",
+   "series": "paper",
+   "date": "2026-10-13",
+   "title": "X-Rec：用 flow matching 做生成式召回",
+   "dur": 261,
+   "hook": "TikTok提出了一种新的生成式召回范式：输入用户看过的视频，用diffusion在候选库里直接找出下一条，速度比之前的生成式召回快3倍多。",
+   "chapters": [
+    "如何用扩散做生成式召回？",
+    "为什么要采样20个点",
+    "从AR到扩散生成",
+    "先猜簇再去噪",
+    "沿球面走而不是直线",
+    "只跑最后一层",
+    "三处设计的消融与收益",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "var",
+   "series": "paper",
+   "date": "2026-10-15",
+   "title": "VAR：把 GPT 生图改成由粗到细",
+   "dur": 343,
+   "hook": "字节投毒实习生的NeurIPS best paper，含金量怎么样？",
+   "chapters": [
+    "字节投毒实习生的最佳论文？",
+    "由粗到细的自回归生图",
+    "逐格自回归的原理与瓶颈",
+    "猜下一张更清楚的整图",
+    "多尺度VQ-VAE与注意力mask",
+    "又快又好超越扩散模型",
+    "缩放定律越大越强",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "capdata",
+   "series": "paper",
+   "date": "2026-10-24",
+   "title": "文生图样本能增强图像编辑吗",
+   "dur": 254,
+   "hook": "文生图的样本，能增强图像编辑能力吗？",
+   "chapters": [
+    "文生图样本能增强编辑吗",
+    "东西长什么样只教一次",
+    "三条数据线各管一种本事",
+    "改图指令写成画图描述",
+    "先学画图后学改图五阶段",
+    "效果不错但缺少消融",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "cond-dropout",
+   "series": "paper",
+   "date": "2026-11-01",
+   "title": "生图模型为什么会不听指令",
+   "dur": 123,
+   "hook": "这只猫身上有三种瑕疵，我们只让模型去掉划痕。",
+   "chapters": [
+    "为什么只修划痕却全修掉了？",
+    "CFG 强度放大两次之差导致误修",
+    "训练时随机擦除指令：条件 dropout",
+    "开 dropout 后 CFG 负项抵消其他瑕疵",
+    "拆解听指令：dropout 0.1 最听话",
+    "训练开 dropout 才越调越听话",
+    "回顾"
+   ]
+  },
+  {
+   "slug": "jit",
+   "series": "paper",
+   "date": "2026-10-29",
+   "title": "JiT：扔掉 VAE，直接在像素上生成",
+   "vivid": true,
+   "hook": "今天我们来讲何恺明大神的 J I T 这篇文章"
+  },
+  {
+   "slug": "ai-growth-illusion",
+   "series": "paper",
+   "date": "2026-10-29",
+   "title": "AI 成长假象：MIT 和谷歌的律师实验",
+   "vivid": true,
+   "hook": "用 AI，是你真的变强了，还是看起来变强了？"
+  },
+  {
+   "slug": "mixgrpo",
+   "series": "paper",
+   "date": "2026-11-02",
+   "title": "MixGRPO：25 步只训 4 步",
+   "vivid": true,
+   "hook": "生图强化学习，25 步只训 4 步，能训得更好吗？"
+  },
+  {
+   "slug": "promptenhancer",
+   "series": "paper",
+   "date": "2026-11-02",
+   "title": "PromptEnhancer：只改提示词，生图更准",
+   "vivid": true,
+   "hook": "不动生图模型，只训一个改提示词的模型，能让图画得更准吗？"
+  }
+ ],
+ "vividpaper": [
+  {
+   "slug": "attention",
+   "title": "Attention Is All You Need"
+  },
+  {
+   "slug": "resnet",
+   "title": "ResNet：残差连接"
+  },
+  {
+   "slug": "vit",
+   "title": "ViT：一张图是 16×16 个词"
+  },
+  {
+   "slug": "ddpm",
+   "title": "DDPM：去噪扩散"
+  },
+  {
+   "slug": "clip",
+   "title": "CLIP：图文对比学习"
+  },
+  {
+   "slug": "rope",
+   "title": "RoPE：旋转位置编码"
+  },
+  {
+   "slug": "flow-matching",
+   "title": "Flow Matching"
+  }
+ ],
+ "projects": [
+  {
+   "name": "multimodal-introduction",
+   "desc": "多模态入门：理解篇 + 生成篇竖屏讲解视频、口播稿和讲义"
+  },
+  {
+   "name": "vividpaper",
+   "desc": "VividPaper：把一篇论文做成 3 分钟动效解读的 Agent skill"
+  },
+  {
+   "name": "image-gen-edit-papers",
+   "desc": "195 篇图像生成与编辑论文的中文深读笔记"
+  },
+  {
+   "name": "video-gen-edit-papers",
+   "desc": "50 篇视频生成与编辑论文的中文解读"
+  },
+  {
+   "name": "LLM_bagu",
+   "desc": "手撕 LLM / RL 面试基本功 + 免费大模型判分的问答题库"
+  },
+  {
+   "name": "agentic-rl-from-scratch",
+   "desc": "不用 GPU、不用大模型，纯 Python 从零写 agentic RL"
+  },
+  {
+   "name": "algorithm-engineer-skills",
+   "desc": "算法工程师的 Agent Skills：公平评测、批量调 VLM、论文快读、技术分享 deck"
+  },
+  {
+   "name": "pelican-bicycle-eval",
+   "desc": "鹈鹕骑自行车 SVG 横评：模型能力、稳定性与花费"
+  },
+  {
+   "name": "agents-md-ablation",
+   "desc": "只改 AGENTS.md 一句话的措辞强度，Agent 行为差多少"
+  },
+  {
+   "name": "chrome-paper-reader",
+   "desc": "本地优先的 Chrome 论文阅读插件"
+  }
+ ]
+}

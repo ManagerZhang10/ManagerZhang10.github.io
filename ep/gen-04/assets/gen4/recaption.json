@@ -1,0 +1,5 @@
+{
+ "prompt": "# Step 1: Create Image Caption\n1. Write the caption using natural, descriptive text without structured formats or rich text.\n2. Enrich caption details by including: object attributes, vision relations between objects, and environmental details.\n3. Identify the text visible in the image, without translation or explanation, and highlight it in the caption with quotation marks.\n4. Maintain authenticity and accuracy, avoid generalizations.\nWrite the caption in Chinese, within 80 characters.",
+ "model": "gemini-3.1-pro-preview",
+ "out": "特写镜头下是一只折耳猫，有着棕白相间的毛发和粉色鼻子。它睁着圆溜溜的大眼睛，黑色瞳孔放大，直视镜头，长长的白胡须向两侧伸展，背景是模糊的暖色调。"
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flow-GRPO：把强化学习用到生图上 · 张指导</title>
+<link rel="icon" href="../../favicon.svg">
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="../../player/player.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../../"><span class="sq"></span>张指导<span class="sl">/</span><em>大模型笔记</em></a>
+  <a class="home mono" href="../../">← 全部动效</a>
+</header>
+<div id="app">
+  <div class="frame">
+    <div class="cap mono"><span><i class="dot"></i>实时渲染 · 浏览器逐帧现场画</span><span id="capR">canvas 1080 × 1920</span></div>
+    <div id="stage" style="--ar:1080 / 1920"><canvas id="c" width="1080" height="1920"></canvas>
+      <button id="big" aria-label="播放"><span></span></button><div id="loading" class="mono">正在载入绘制代码…</div></div>
+    <i class="cn tl"></i><i class="cn tr"></i><i class="cn bl"></i><i class="cn br"></i>
+  </div>
+  <aside id="side">
+    <div class="head">
+      <div class="no" id="no"></div>
+      <div class="series mono" id="series"></div>
+      <h1 id="title">Flow-GRPO：把强化学习用到生图上</h1>
+      <p class="hook" id="hook"></p>
+    </div>
+    <div id="ctl">
+      <button id="pp" aria-label="播放/暂停"></button>
+      <div class="track"><input id="bar" type="range" min="0" max="1000" value="0" aria-label="进度"><div id="marks"></div></div>
+      <span id="time" class="mono">0:00</span>
+    </div>
+    <div id="speeds" class="mono"></div>
+    <div class="lists">
+      <h2 class="mono"><i>01</i>知识点</h2><ol id="chapters"></ol>
+      <h2 class="mono"><i>02</i>逐句 · 点击跳到那一秒</h2><ol id="lines"></ol>
+    </div>
+    <p class="keys mono">空格 播放/暂停 · ← → 快退快进 5 秒</p>
+  </aside>
+</div>
+<script src="data.js"></script>
+<script src="engine/core.js"></script>
+<script src="engine/ep05.js"></script>
+<script src="../../player/player.js"></script>
+</body></html>

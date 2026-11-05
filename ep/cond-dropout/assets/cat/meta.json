@@ -1,0 +1,192 @@
+{
+ "group_id": "cat0",
+ "sample": "s1",
+ "defect_seed": 1000,
+ "w": 544,
+ "h": 480,
+ "regions": {
+  "scratch": [
+   293,
+   254,
+   532,
+   468
+  ],
+  "dust": [
+   12,
+   254,
+   269,
+   468
+  ],
+  "stain": [
+   293,
+   12,
+   532,
+   230
+  ],
+  "clean": [
+   12,
+   12,
+   269,
+   230
+  ]
+ },
+ "fix": {
+  "d0": {
+   "scratch": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "dust": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "stain": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   "colorize": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "d1": {
+   "scratch": [
+    1,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   "dust": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "stain": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "colorize": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ },
+ "none_t": {
+  "d0": {
+   "colorize": 0.03,
+   "scratch": -0.0,
+   "dust": -0.04,
+   "stain": -0.01
+  },
+  "d1": {
+   "colorize": 0.03,
+   "scratch": 0.99,
+   "dust": 0.99,
+   "stain": 0.82
+  }
+ },
+ "scores_t": {
+  "d0_cfg1": {
+   "colorize": 0.03,
+   "scratch": 1.0,
+   "dust": -0.05,
+   "stain": -0.01
+  },
+  "d0_cfg1.5": {
+   "colorize": 0.03,
+   "scratch": 1.0,
+   "dust": 0.99,
+   "stain": -0.01
+  },
+  "d0_cfg2": {
+   "colorize": 0.03,
+   "scratch": 1.0,
+   "dust": 0.99,
+   "stain": -0.02
+  },
+  "d0_cfg3": {
+   "colorize": 0.03,
+   "scratch": 1.01,
+   "dust": 0.99,
+   "stain": -0.01
+  },
+  "d0_cfg4": {
+   "colorize": 0.03,
+   "scratch": 1.01,
+   "dust": 0.99,
+   "stain": 0.91
+  },
+  "d0_cfg6": {
+   "colorize": 0.03,
+   "scratch": 1.01,
+   "dust": 0.99,
+   "stain": 0.94
+  },
+  "d1_cfg1": {
+   "colorize": 0.03,
+   "scratch": 1.0,
+   "dust": -0.05,
+   "stain": -0.0
+  },
+  "d1_cfg1.5": {
+   "colorize": 0.03,
+   "scratch": 0.0,
+   "dust": -0.05,
+   "stain": -0.0
+  },
+  "d1_cfg2": {
+   "colorize": 0.03,
+   "scratch": -0.0,
+   "dust": -0.06,
+   "stain": -0.0
+  },
+  "d1_cfg3": {
+   "colorize": 0.03,
+   "scratch": -0.01,
+   "dust": -0.07,
+   "stain": -0.0
+  },
+  "d1_cfg4": {
+   "colorize": 0.03,
+   "scratch": 1.01,
+   "dust": -0.08,
+   "stain": -0.01
+  },
+  "d1_cfg6": {
+   "colorize": 0.03,
+   "scratch": 1.02,
+   "dust": -0.09,
+   "stain": -0.0
+  }
+ },
+ "note": "regions = [x0, y0, x1, y1] px; fix = per-cfg (1/1.5/2/3/4/6) whether abs_score t >= 0.5; provenance: story/facts.md F21"
+}
