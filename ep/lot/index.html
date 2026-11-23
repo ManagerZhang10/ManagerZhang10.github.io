@@ -39,6 +39,7 @@
 </div>
 <script src="data.js"></script>
 <script src="engine/core.js"></script>
+<script data-slim>(()=>{const L=loadImg;loadImg=u=>L(String(u).replace(/\.(png|jpe?g)$/i,".webp"));if(!/[?&](verify|embed)/.test(location.search))["assets/avatar_1x1.webp", "assets/base7.webp", "assets/cat.webp", "assets/pipe.webp", "assets/src4.webp", "assets/teaser.webp", "assets/tok.webp", "avatar_toon/00001.webp"].forEach(u=>loadImg(u).catch(()=>{}))})()</script>
 <script src="engine/lot2.js"></script>
 <script src="../../player/player.js"></script>
 </body></html>

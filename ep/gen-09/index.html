@@ -39,6 +39,7 @@
 </div>
 <script src="data.js"></script>
 <script src="engine/core.js"></script>
+<script data-slim>(()=>{const L=loadImg;loadImg=u=>L(String(u).replace(/\.(png|jpe?g)$/i,".webp"));if(!/[?&](verify|embed)/.test(location.search))["assets/avatar_1x1.webp", "assets/bagel/bagel_arch.webp", "assets/bagel/bagel_archloss.webp", "assets/bagel/cat.webp", "assets/bagel/dog.webp", "assets/bagel/janus_arch.webp", "assets/bagel/mot_arch.webp", "assets/bagel/vid_f1.webp", "assets/bagel/vid_f2.webp", "assets/bagel/vid_f3.webp", "assets/bagel/web_mech.webp", "assets/cat.webp", "avatar_toon/00001.webp"].forEach(u=>loadImg(u).catch(()=>{}))})()</script>
 <script src="engine/lib.js"></script>
 <script src="engine/unify2.js"></script>
 <script src="../../player/player.js"></script>
